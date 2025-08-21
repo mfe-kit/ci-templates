@@ -135,6 +135,7 @@ jobs:
       - name: Package library
         run: |
           mkdir release
+          cp -r dist release/
           cp package.json README.md release/
           cd release
           zip -r ../${{ inputs.repo_name }}-v${{ needs.version-check.outputs.current_version }}.zip .
